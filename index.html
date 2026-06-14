@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NayePankh Foundation | Tech Internship Portal</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Official Tech Internship portal for NayePankh Foundation. Stay updated on assignments, follow our official channels, download project tracks, and submit your tasks.">
+  <meta name="keywords" content="NayePankh Foundation, Tech Internship, Web Development, UI/UX, Assignment submission, NGO, Social Impact">
+  <meta name="author" content="NayePankh Foundation">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://img.icons8.com/color/48/wing.png">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Confetti Particle Canvas -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Ambient Glowing Spheres for Visual Premium Aesthetic -->
+  <div class="bg-glow-sphere sphere-1"></div>
+  <div class="bg-glow-sphere sphere-2"></div>
+
+  <!-- Sticky Header -->
+  <header id="main-header">
+    <div class="container nav-container">
+      <a href="#" class="logo-wrapper">
+        <!-- Custom Wings (Pankh) SVG Logo -->
+        <svg viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Left Wing -->
+          <path d="M5 20C15 15 25 5 40 12C32 18 22 20 15 20C22 22 35 25 38 32C28 28 15 25 5 20Z" fill="url(#wing-gradient-left)"/>
+          <!-- Right Wing -->
+          <path d="M42 12C45 10 48 9 52 9C53 10 54 12 53 15C50 16 46 15 42 12Z" fill="#06b6d4"/>
+          <!-- Logo Gradients -->
+          <defs>
+            <linearGradient id="wing-gradient-left" x1="5" y1="20" x2="40" y2="20" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#3b82f6"/>
+              <stop offset="100%" stop-color="#06b6d4"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="logo-name-layout">
+          <span class="logo-text text-primary">Naye<span class="gradient-text-accent">Pankh</span></span>
+          <span class="logo-tagline">Foundation</span>
+        </div>
+      </a>
+      
+      <nav>
+        <ul>
+          <li><a href="#checklist-section" class="active" id="nav-checklist">Onboarding</a></li>
+          <li><a href="#assignment-section" id="nav-assignment">Assignment</a></li>
+          <li><a href="#about-section" id="nav-about">About NGO</a></li>
+          <li><a href="#faq-section" id="nav-faq">FAQs</a></li>
+          <li><a href="#contact-section" id="nav-contact">Support</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-badge">
+        <span class="dot"></span>
+        <span>Tech Intern Hub</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section container">
+    <div class="announcement-banner">
+      <i class="fa-solid fa-bullhorn"></i>
+      <span>Update for Tech Internship Applicants • Release: End of Today</span>
+    </div>
+    <h1>Unleash Your Potential & <br><span class="gradient-text">Spread Your New Wings</span></h1>
+    <p>Welcome to the NayePankh Foundation Tech Onboarding Portal. To unlock the technical assessment assignment, please complete the quick checklist below by following our official handles.</p>
+  </section>
+
+  <!-- Interactive Progress Hub -->
+  <section class="container" style="margin-bottom: 40px;">
+    <div class="progress-hub glass-panel" id="progress-card">
+      <div class="progress-hub-layout">
+        <div class="circular-progress-wrapper">
+          <div class="progress-svg-container">
+            <svg>
+              <defs>
+                <linearGradient id="progress-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#3b82f6"/>
+                  <stop offset="100%" stop-color="#06b6d4"/>
+                </linearGradient>
+              </defs>
+              <circle class="progress-bg-circle" cx="70" cy="70" r="60"/>
+              <circle class="progress-bar-circle" id="onboarding-progress-circle" cx="70" cy="70" r="60"/>
+            </svg>
+            <div class="progress-text-overlay">
+              <span class="progress-percent" id="onboarding-progress-text">0%</span>
+              <div class="progress-label">Done</div>
+            </div>
+          </div>
+        </div>
+        <div class="progress-details-panel">
+          <h2>Onboarding Completeness</h2>
+          <p>Important updates, opportunities, and announcements are shared regularly across our platforms. Please verify you have followed our official platforms to unlock your assignment task.</p>
+          <div class="task-summary-pills">
+            <span class="summary-pill" id="pill-instagram"><i class="fa-brands fa-instagram"></i> Instagram</span>
+            <span class="summary-pill" id="pill-linkedin"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</span>
+            <span class="summary-pill" id="pill-youtube"><i class="fa-brands fa-youtube"></i> YouTube</span>
+            <span class="summary-pill" id="pill-facebook"><i class="fa-brands fa-facebook-f"></i> Facebook</span>
+            <span class="summary-pill" id="pill-twitter"><i class="fa-brands fa-x-twitter"></i> X (Twitter)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Platform Checklist Board -->
+  <section id="checklist-section" class="container" style="margin-bottom: 80px;">
+    <div class="section-header">
+      <h2>Step 1: Connect with NayePankh</h2>
+      <p>Follow our channels below. Click each link to open the channel, follow, and mark the checkbox to track progress.</p>
+    </div>
+    
+    <div class="checklist-grid">
+      <!-- LinkedIn Card -->
+      <div class="social-card linkedin glass-panel" id="card-linkedin">
+        <i class="fa-brands fa-linkedin social-card-bg-icon"></i>
+        <div class="social-header-row">
+          <div class="social-icon-wrapper">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </div>
+          <label class="custom-checkbox-container" title="Mark as Followed">
+            <input type="checkbox" id="check-linkedin" class="social-checkbox" data-platform="linkedin">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div>
+          <h3 class="platform-name">LinkedIn</h3>
+          <span class="platform-handle">@company/nayepankh</span>
+        </div>
+        <p class="social-card-body">Professional updates, internship certificates, team accomplishments, and career opportunities.</p>
+        <div class="social-card-actions">
+          <a href="https://www.linkedin.com/company/nayepankh" target="_blank" class="btn-follow" data-platform="linkedin">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit & Follow
+          </a>
+        </div>
+      </div>
+
+      <!-- Instagram Card -->
+      <div class="social-card instagram glass-panel" id="card-instagram">
+        <i class="fa-brands fa-instagram social-card-bg-icon"></i>
+        <div class="social-header-row">
+          <div class="social-icon-wrapper">
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+          <label class="custom-checkbox-container" title="Mark as Followed">
+            <input type="checkbox" id="check-instagram" class="social-checkbox" data-platform="instagram">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div>
+          <h3 class="platform-name">Instagram</h3>
+          <span class="platform-handle">@nayepankhfoundation</span>
+        </div>
+        <p class="social-card-body">Live drive photos, visual updates on campaigns, volunteers behind-the-scenes, and stories of change.</p>
+        <div class="social-card-actions">
+          <a href="https://www.instagram.com/nayepankhfoundation" target="_blank" class="btn-follow" data-platform="instagram">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit & Follow
+          </a>
+        </div>
+      </div>
+
+      <!-- YouTube Card -->
+      <div class="social-card youtube glass-panel" id="card-youtube">
+        <i class="fa-brands fa-youtube social-card-bg-icon"></i>
+        <div class="social-header-row">
+          <div class="social-icon-wrapper">
+            <i class="fa-brands fa-youtube"></i>
+          </div>
+          <label class="custom-checkbox-container" title="Mark as Subscribed">
+            <input type="checkbox" id="check-youtube" class="social-checkbox" data-platform="youtube">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div>
+          <h3 class="platform-name">YouTube</h3>
+          <span class="platform-handle">@nayepankhfoundation</span>
+        </div>
+        <p class="social-card-body">High-impact documentaries, detailed campaign vlogs, testimonials, and video summaries of our work.</p>
+        <div class="social-card-actions">
+          <a href="https://youtube.com/@nayepankhfoundation" target="_blank" class="btn-follow" data-platform="youtube">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit & Subscribe
+          </a>
+        </div>
+      </div>
+
+      <!-- Facebook Card -->
+      <div class="social-card facebook glass-panel" id="card-facebook">
+        <i class="fa-brands fa-facebook social-card-bg-icon"></i>
+        <div class="social-header-row">
+          <div class="social-icon-wrapper">
+            <i class="fa-brands fa-facebook-f"></i>
+          </div>
+          <label class="custom-checkbox-container" title="Mark as Followed">
+            <input type="checkbox" id="check-facebook" class="social-checkbox" data-platform="facebook">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div>
+          <h3 class="platform-name">Facebook</h3>
+          <span class="platform-handle">@nayepankhfoundation</span>
+        </div>
+        <p class="social-card-body">Community newsletters, volunteer events calendar, testimonials, and local community outreach drives.</p>
+        <div class="social-card-actions">
+          <a href="https://facebook.com/nayepankhfoundation" target="_blank" class="btn-follow" data-platform="facebook">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit & Follow
+          </a>
+        </div>
+      </div>
+
+      <!-- Twitter/X Card -->
+      <div class="social-card twitter glass-panel" id="card-twitter">
+        <i class="fa-brands fa-x-twitter social-card-bg-icon"></i>
+        <div class="social-header-row">
+          <div class="social-icon-wrapper">
+            <i class="fa-brands fa-x-twitter"></i>
+          </div>
+          <label class="custom-checkbox-container" title="Mark as Followed">
+            <input type="checkbox" id="check-twitter" class="social-checkbox" data-platform="twitter">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div>
+          <h3 class="platform-name">𝕏 (Twitter)</h3>
+          <span class="platform-handle">@nayepankh</span>
+        </div>
+        <p class="social-card-body">Quick alerts, thought leadership tweets, retweets of global impact partners, and quick news bytes.</p>
+        <div class="social-card-actions">
+          <a href="https://x.com/nayepankh" target="_blank" class="btn-follow" data-platform="twitter">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit & Follow
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Assignment Hub Section -->
+  <section id="assignment-section" class="assignment-hub-section container">
+    <div class="section-header">
+      <h2>Step 2: Technical Internship Assignment</h2>
+      <p>Follow our progress to unlock your tech assignment description and upload your completed files.</p>
+    </div>
+
+    <!-- Main Assignment Glass Panel -->
+    <div class="assignment-panel glass-panel">
+      
+      <!-- Locked View -->
+      <div id="assignment-locked" class="assignment-locked-view">
+        <div class="lock-icon-container">
+          <i class="fa-solid fa-lock"></i>
+        </div>
+        <h3>Assignment Portal Locked</h3>
+        <p>You must follow NayePankh Foundation on all 5 social platforms listed above to unlock the assignment guidelines, timer, and submission form.</p>
+        
+        <div class="unlock-milestone-pills">
+          <div class="milestone-text" id="milestone-instagram"><i class="fa-solid fa-circle-notch"></i> Instagram</div>
+          <div class="milestone-text" id="milestone-linkedin"><i class="fa-solid fa-circle-notch"></i> LinkedIn</div>
+          <div class="milestone-text" id="milestone-youtube"><i class="fa-solid fa-circle-notch"></i> YouTube</div>
+          <div class="milestone-text" id="milestone-facebook"><i class="fa-solid fa-circle-notch"></i> Facebook</div>
+          <div class="milestone-text" id="milestone-twitter"><i class="fa-solid fa-circle-notch"></i> Twitter</div>
+        </div>
+      </div>
+
+      <!-- Unlocked View (Hidden Initially) -->
+      <div id="assignment-unlocked" class="assignment-unlocked-view" style="display: none;">
+        
+        <div class="assignment-header">
+          <div>
+            <span class="track-difficulty-badge">Status: Verification Completed</span>
+            <h3 style="margin-top: 8px; font-size: 1.4rem;">Tech Assignment Portal</h3>
+          </div>
+          <!-- Dynamic Countdown Timer -->
+          <div class="timer-box" id="assignment-timer-container">
+            <span class="timer-label" id="timer-status-text">Releasing in</span>
+            <span class="countdown-digits" id="countdown-timer">00:00:00</span>
+          </div>
+        </div>
+
+        <!-- Dynamic Content Layout -->
+        <div class="assignment-content-layout">
+          <!-- Left side: Tabs List -->
+          <div class="track-tabs-list">
+            <button class="track-tab-btn active" data-track="frontend">
+              <div class="track-tab-icon"><i class="fa-solid fa-laptop-code"></i></div>
+              <div class="track-tab-info">
+                <span class="track-tab-title">Frontend Developer</span>
+                <span class="track-tab-subtitle">HTML, CSS, JS / React</span>
+              </div>
+            </button>
+
+            <button class="track-tab-btn" data-track="backend">
+              <div class="track-tab-icon"><i class="fa-solid fa-server"></i></div>
+              <div class="track-tab-info">
+                <span class="track-tab-title">Backend Developer</span>
+                <span class="track-tab-subtitle">Node.js, Express, databases</span>
+              </div>
+            </button>
+
+            <button class="track-tab-btn" data-track="fullstack">
+              <div class="track-tab-icon"><i class="fa-solid fa-cubes"></i></div>
+              <div class="track-tab-info">
+                <span class="track-tab-title">Full-Stack Developer</span>
+                <span class="track-tab-subtitle">MERN / Next.js Stack</span>
+              </div>
+            </button>
+
+            <button class="track-tab-btn" data-track="uiux">
+              <div class="track-tab-icon"><i class="fa-solid fa-bezier-curve"></i></div>
+              <div class="track-tab-info">
+                <span class="track-tab-title">UI/UX Designer</span>
+                <span class="track-tab-subtitle">Figma, Wireframing, Styling</span>
+              </div>
+            </button>
+          </div>
+
+          <!-- Right side: Tab details -->
+          <div class="track-details-display" id="track-details-container">
+            <!-- Details are dynamically loaded from JS, displaying template for Frontend by default -->
+            <div class="track-detail-header">
+              <div class="track-header-title">
+                <h3 id="detail-title">Frontend Developer Track</h3>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">Ref: NP-INT-2026-FE</p>
+              </div>
+              <span class="track-difficulty-badge intermediate" id="detail-difficulty">Intermediate</span>
+            </div>
+            
+            <p class="track-description" id="detail-description">Create a responsive, highly interactive web component or landing page demonstrating modern animations, proper semantic HTML, clean responsive CSS variables, and solid form validation.</p>
+            
+            <div class="track-spec-list">
+              <h4 class="track-spec-title">Required Guidelines:</h4>
+              <ul class="track-specs" id="detail-specs">
+                <li><i class="fa-solid fa-circle-check"></i> Responsive Mobile First design</li>
+                <li><i class="fa-solid fa-circle-check"></i> Clean Vanilla CSS stylesheet</li>
+                <li><i class="fa-solid fa-circle-check"></i> Interactive components in Vanilla JS</li>
+                <li><i class="fa-solid fa-circle-check"></i> SEO optimized head tags</li>
+              </ul>
+            </div>
+
+            <div class="track-card-footer">
+              <button class="btn-download-task" id="btn-download-guidelines">
+                <i class="fa-solid fa-file-arrow-down"></i> Download Guidelines PDF
+              </button>
+              <button class="submission-trigger-btn" id="btn-open-submission">
+                <i class="fa-solid fa-paper-plane"></i> Submit Solution
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hidden Submission Form inside Unlocked Container -->
+        <div class="submission-form-container" id="submission-form-box">
+          <div class="form-title-row">
+            <h4 style="font-size: 1.15rem; font-family: var(--font-heading);"><i class="fa-solid fa-paper-plane" style="color: var(--primary); margin-right: 8px;"></i> Submit Assignment Solution</h4>
+            <button id="btn-close-submission" style="background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 1.1rem;"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+          
+          <div class="custom-alert success" id="submission-success-alert">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Success! Your assignment solution has been submitted. Our Tech Lead will review and reach out to you via email within 3-5 business days.</span>
+          </div>
+
+          <form id="assignment-submit-form" onsubmit="return false;">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="submit-name">Full Name *</label>
+                <input type="text" id="submit-name" class="form-control" required placeholder="e.g., Rohan Sharma">
+              </div>
+              <div class="form-group">
+                <label for="submit-email">Email Address *</label>
+                <input type="email" id="submit-email" class="form-control" required placeholder="e.g., rohan@gmail.com">
+              </div>
+              <div class="form-group">
+                <label for="submit-track">Selected Track *</label>
+                <select id="submit-track" class="form-control" required>
+                  <option value="frontend">Frontend Developer Track</option>
+                  <option value="backend">Backend Developer Track</option>
+                  <option value="fullstack">Full-Stack Developer Track</option>
+                  <option value="uiux">UI/UX Designer Track</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="submit-github" id="lbl-github-figma">GitHub Repository URL *</label>
+                <input type="url" id="submit-github" class="form-control" required placeholder="https://github.com/your-username/repo-name">
+              </div>
+              <div class="form-group full-width">
+                <label for="submit-hosted">Hosted Live Project URL (Optional)</label>
+                <input type="url" id="submit-hosted" class="form-control" placeholder="https://your-project.vercel.app">
+              </div>
+              <div class="form-group full-width">
+                <label for="submit-notes">Additional Implementation Notes</label>
+                <textarea id="submit-notes" class="form-control" rows="3" placeholder="Explain the key frameworks, architecture choices, or extra features you implemented..."></textarea>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 10px;">
+              <button type="button" class="btn-follow" style="max-width: 120px;" id="btn-cancel-submit">Cancel</button>
+              <button type="submit" class="btn-form-submit" id="btn-confirm-submit">Submit Assignment</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NGO Missions Section -->
+  <section id="about-section" class="ngo-about-section container">
+    <div class="section-header">
+      <h2>About NayePankh Foundation</h2>
+      <p>NayePankh Foundation is a government registered NGO (80G & 12A) striving to empower underprivileged sections, spread welfare, and build community strength.</p>
+    </div>
+
+    <div class="mission-grid">
+      <!-- Card 1 -->
+      <div class="mission-card glass-panel">
+        <div class="mission-icon"><i class="fa-solid fa-bowl-rice"></i></div>
+        <h3>Feed India Drive</h3>
+        <p>Distributing thousands of healthy, cooked meals daily to underprivileged families and conducting animal-feeding drives in municipal shelter areas.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="mission-card glass-panel">
+        <div class="mission-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <h3>Primary Education</h3>
+        <p>Providing basic schooling, books, writing materials, and educational camps to young children living in slums and remote villages.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="mission-card glass-panel">
+        <div class="mission-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+        <h3>Hygiene & Health</h3>
+        <p>Organizing sanitary pad distribution camps for rural women and conducting awareness webinars regarding primary reproductive health.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="mission-card glass-panel">
+        <div class="mission-icon"><i class="fa-solid fa-paw"></i></div>
+        <h3>Animal Welfare</h3>
+        <p>Setting up medical camps for injured stray animals, providing treatment, shelter support, and winter warmth initiatives.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq-section" class="faq-section container">
+    <div class="section-header">
+      <h2>Tech Internship FAQs</h2>
+      <p>Find quick answers to common questions about the application, selection process, and assignment deliverables.</p>
+    </div>
+
+    <div class="faq-search-wrapper">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" class="faq-search-input" id="faq-search" placeholder="Search questions (e.g. certificate, stipend)...">
+    </div>
+
+    <div class="faq-accordion" id="faq-list">
+      <!-- FAQ 1 -->
+      <div class="faq-item">
+        <button class="faq-question-btn">
+          <span>What is the duration of the Tech Internship?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer-panel">
+          <p>The standard internship duration is 2-3 months, depending on the track and milestone completions. It can be extended based on mutual consent and performance.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="faq-item">
+        <button class="faq-question-btn">
+          <span>Is this internship paid or unpaid?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer-panel">
+          <p>NayePankh Foundation offers both voluntary (unpaid) opportunities to contribute to social causes and selective project-based stipends for exceptional tech deliverables. Details of stipends are mentioned in the final selection letter.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="faq-item">
+        <button class="faq-question-btn">
+          <span>Will I get a certificate and Letter of Recommendation (LOR)?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer-panel">
+          <p>Yes, all interns who successfully complete their assigned tasks and serve their full tenure will receive an official Internship Certificate. Letter of Recommendation (LOR) is awarded to top performers based on dedication and outstanding tech contributions.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="faq-item">
+        <button class="faq-question-btn">
+          <span>What is the deadline for the technical assignment?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer-panel">
+          <p>Typically, candidates have 48 to 72 hours from the moment the assignment is officially released to complete and submit their solutions via this portal. Exact deadline times are mentioned in the downloaded track instructions.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="faq-item">
+        <button class="faq-question-btn">
+          <span>Who can I contact if I face issues with submission?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer-panel">
+          <p>If you encounter technical issues submitting your URL link or accessing resources, you can submit a support ticket via the Helpdesk form below, or email us directly at contact@nayepankh.com.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section / Support -->
+  <section id="contact-section" class="contact-section container">
+    <div class="section-header">
+      <h2>Tech Support & Helpdesk</h2>
+      <p>Having doubts about the assignments or having troubles with onboarding? Get in touch with our tech coordination desk.</p>
+    </div>
+
+    <div class="contact-layout">
+      <!-- Contact Info -->
+      <div class="contact-info-panel">
+        <div class="contact-info-card glass-panel">
+          <div class="contact-icon-box"><i class="fa-solid fa-envelope"></i></div>
+          <div>
+            <h4>Email Support</h4>
+            <a href="mailto:contact@nayepankh.com">contact@nayepankh.com</a>
+          </div>
+        </div>
+
+        <div class="contact-info-card glass-panel">
+          <div class="contact-icon-box"><i class="fa-solid fa-circle-info"></i></div>
+          <div>
+            <h4>NGO Office Location</h4>
+            <p>Uttar Pradesh, India (Registered Govt. NGO)</p>
+          </div>
+        </div>
+
+        <div class="contact-info-card glass-panel">
+          <div class="contact-icon-box"><i class="fa-solid fa-hashtag"></i></div>
+          <div>
+            <h4>Connect Instantly</h4>
+            <p>Use our official handles on the onboarding checklist to message us directly for fast updates.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-panel glass-panel">
+        <h3>Submit a Query</h3>
+        <div class="custom-alert success" id="contact-success-alert">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Thank you! Your query has been logged. Our tech team will reply to your registered email shortly.</span>
+        </div>
+        
+        <form id="tech-support-form" onsubmit="return false;">
+          <div class="form-group">
+            <label for="contact-name">Your Full Name *</label>
+            <input type="text" id="contact-name" class="form-control" required placeholder="e.g. Rohit Kumar">
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Email Address *</label>
+            <input type="email" id="contact-email" class="form-control" required placeholder="e.g. rohit@gmail.com">
+          </div>
+          <div class="form-group">
+            <label for="contact-msg">Describe your inquiry/issue *</label>
+            <textarea id="contact-msg" class="form-control" rows="4" required placeholder="Write details about your question here..."></textarea>
+          </div>
+          <button type="submit" class="btn-form-submit" id="btn-submit-support">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo">
+        <svg viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="height: 32px;">
+          <path d="M5 20C15 15 25 5 40 12C32 18 22 20 15 20C22 22 35 25 38 32C28 28 15 25 5 20Z" fill="url(#wing-gradient-footer)"/>
+          <path d="M42 12C45 10 48 9 52 9C53 10 54 12 53 15C50 16 46 15 42 12Z" fill="#06b6d4"/>
+          <defs>
+            <linearGradient id="wing-gradient-footer" x1="5" y1="20" x2="40" y2="20" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#3b82f6"/>
+              <stop offset="100%" stop-color="#06b6d4"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="logo-text">Naye<span class="gradient-text-accent">Pankh</span></span>
+      </div>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/company/nayepankh" target="_blank" class="footer-social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/nayepankhfoundation" target="_blank" class="footer-social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://youtube.com/@nayepankhfoundation" target="_blank" class="footer-social-btn" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://facebook.com/nayepankhfoundation" target="_blank" class="footer-social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://x.com/nayepankh" target="_blank" class="footer-social-btn" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+      <p class="footer-copyright">© 2026 NayePankh Foundation. All Rights Reserved. Govt Registered NGO (UP Govt).</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="index.js"></script>
+</body>
+</html>
