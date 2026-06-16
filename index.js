@@ -678,7 +678,7 @@ NayePankh Foundation Tech Team`
 
     animate();
   }
-  // theme toggle logic
+
   // --- Theme Toggle Logic ----
   const themeToggleBtn = document.getElementById('theme-toggle-btn');
 
