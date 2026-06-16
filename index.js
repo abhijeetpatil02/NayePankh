@@ -703,7 +703,6 @@ NayePankh Foundation Tech Team`
     }
   }
 
-
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => {
       const isLight = document.body.classList.toggle('light-theme');
